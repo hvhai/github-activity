@@ -1,10 +1,18 @@
 plugins {
     kotlin("jvm") version "2.1.10"
     kotlin("plugin.serialization") version "2.1.10"
+    application
 }
 
 group = "com.codehunter.github_activity_kotlin"
 version = "1.0-SNAPSHOT"
+
+application {
+    mainClass.set("com.codehunter.github_activity_kotlin.MainKt")
+}
+tasks.withType<JavaExec> {
+    standardInput = System.`in`
+}
 
 repositories {
     mavenCentral()
